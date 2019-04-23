@@ -33,3 +33,26 @@ window.addEventListener('storage', function(e){
         renderNotes(notes, filters)        
     }
 })
+
+const now = new Date()
+const timeStamp = now.getTime()
+
+const myDate = new Date(timeStamp)
+console.log(myDate.getFullYear())
+
+
+
+
+
+
+
+
+
+//console.log(now.toString())
+
+// console.log(`Year ${now.getFullYear()}`)
+// console.log(`Month ${now.getMonth()}`)
+// console.log(`Day ${now.getDate()}`)
+// console.log(`Hours ${now.getHours()}`)
+// console.log(`Mins ${now.getMinutes()}`)
+// console.log(`Secs ${now.getSeconds()}`)
