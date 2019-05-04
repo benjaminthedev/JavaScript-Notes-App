@@ -9,10 +9,14 @@ renderNotes(notes, filters)
 document.querySelector('#create-note').addEventListener('click', function (e) {
     const id = uuidv4()
 
+    const timeStamp = moment().valueOf()     
+
     notes.push({
         id: id,
         title: '',
-        body: ''
+        body: '',
+        createdAt: timeStamp,
+        updatedAt: timeStamp
     })
     saveNotes(notes)
     location.assign(`/edit.html#${id}`)
@@ -34,21 +38,11 @@ window.addEventListener('storage', function(e){
     }
 })
 
-const now = moment()
-console.log(now.format('Qo MMMM YYYY' ))
+// const now = new Date()
+// const timeStamp = now.getTime()
 
-const nowTimeStap = now.valueOf()
-console.log(moment(nowTimeStap).toString())
-
-
-
-const newNow = moment()
-newNow.year(1983).month(0).day(13);    
-console.log(newNow.format('Qo MMMM YYYY' ))
-
-
-
-
+// const myDate = new Date(timeStamp)
+// console.log(myDate.getFullYear())
 
 //console.log(now.toString())
 
