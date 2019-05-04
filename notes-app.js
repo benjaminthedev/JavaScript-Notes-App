@@ -34,15 +34,17 @@ window.addEventListener('storage', function(e){
     }
 })
 
-const now = new Date()
-const timeStamp = now.getTime()
+const now = moment()
+console.log(now.format('Qo MMMM YYYY' ))
 
-const myDate = new Date(timeStamp)
-console.log(myDate.getFullYear())
-
-
+const nowTimeStap = now.valueOf()
+console.log(moment(nowTimeStap).toString())
 
 
+
+const newNow = moment()
+newNow.year(1983).month(0).day(13);    
+console.log(newNow.format('Qo MMMM YYYY' ))
 
 
 
