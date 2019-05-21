@@ -1,8 +1,7 @@
 let notes = getSavedNotes()
 
 const filters = {
-    searchText: '',
-    sortBy: 'byEdited'
+    searchText: ''
 }
 
 renderNotes(notes, filters)
@@ -10,14 +9,10 @@ renderNotes(notes, filters)
 document.querySelector('#create-note').addEventListener('click', function (e) {
     const id = uuidv4()
 
-    const timeStamp = moment().valueOf()     
-
     notes.push({
         id: id,
         title: '',
-        body: '',
-        createdAt: timeStamp,
-        updatedAt: timeStamp
+        body: ''
     })
     saveNotes(notes)
     location.assign(`/edit.html#${id}`)
@@ -29,9 +24,7 @@ document.querySelector('#search-text').addEventListener('input', function (e) {
 })
 
 document.querySelector('#filter-by').addEventListener('change', function (e) {
-    filters.sortBy = e.target.value
-    renderNotes(notes, filters)   
-    
+    console.log(e.target.value)
 })
 
 window.addEventListener('storage', function(e){
@@ -41,11 +34,21 @@ window.addEventListener('storage', function(e){
     }
 })
 
-// const now = new Date()
-// const timeStamp = now.getTime()
+const now = moment()
+console.log(now.format('Qo MMMM YYYY' ))
 
-// const myDate = new Date(timeStamp)
-// console.log(myDate.getFullYear())
+const nowTimeStap = now.valueOf()
+console.log(moment(nowTimeStap).toString())
+
+
+
+const newNow = moment()
+newNow.year(1983).month(0).day(13);       
+console.log(newNow.format('Qo MMMM YYYY' ))
+
+
+
+
 
 //console.log(now.toString())
 
