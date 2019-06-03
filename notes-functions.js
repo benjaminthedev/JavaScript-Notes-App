@@ -1,7 +1,7 @@
 // Read existing notes from localStorage
 const getSavedNotes = () => {
     const notesJSON = localStorage.getItem('notes')
-    return notesJSON !== null ? JSON.parse(notesJSON) : []   
+    return notesJSON ? JSON.parse(notesJSON) : []   
 }
 
 // Save the notes to localStorage
@@ -16,7 +16,6 @@ const removeNote = (id) => {
         notes.splice(noteIndex, 1)
     }
 }
-
 
 // Generate the DOM structure for a note
 const generateNoteDOM = (note) => {
